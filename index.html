@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Convite de Casamento – Ingridy & Winicius</title>
+    <meta name="description" content="Você é nosso convidado! Junte-se a nós para celebrar o casamento de Ingridy & Winicius. Confira data, local, programação e confirme sua presença.">
+    <meta name="theme-color" content="#1b1b1b" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='0.9em' font-size='90'>💍</text></svg>">
+</head>
+<body>
+    <header class="navbar" aria-label="Navegação principal">
+        <a class="brand" href="#hero" aria-label="Voltar ao topo">Ingridy &amp; Winicius</a>
+        <nav class="nav-links" aria-label="Seções">
+            <a href="#detalhes">Detalhes</a>
+            <a href="#historia">Nossa História</a>
+            <a href="#local">Local</a>
+            <a href="#galeria">Galeria</a>
+            <a href="#presentes">Presentes</a>
+            <a class="rsvp-pill" href="#rsvp">RSVP</a>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Hero -->
+        <section id="hero" class="hero" aria-label="Convite de casamento">
+            <div class="hero-media" role="img" aria-label="Foto romântica do casal"></div>
+            <div class="hero-content">
+                <div class="hero-inner">
+                    <p class="overline">Estão convidados</p>
+                    <h1 class="couple">Ingridy <span>&amp;</span> Winicius</h1>
+                    <p class="subtitle">Sábado, 22 de Novembro de 2025 • 16:30</p>
+                    <p class="days-left"><strong id="cd-days-big">—</strong> dias</p>
+                    <div id="countdown" class="countdown" aria-live="polite">
+                        <div><strong id="cd-days">—</strong><span>dias</span></div>
+                        <div><strong id="cd-hours">—</strong><span>horas</span></div>
+                        <div><strong id="cd-mins">—</strong><span>min</span></div>
+                        <div><strong id="cd-secs">—</strong><span>seg</span></div>
+                    </div>
+                    <div class="cta-row">
+                        <a class="btn primary" href="#rsvp">Confirmar presença</a>
+                        <a class="btn ghost" href="#detalhes">Ver detalhes</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Detalhes do evento -->
+        <section id="detalhes" class="section details" aria-labelledby="details-title">
+            <div class="container">
+                <h2 id="details-title">Detalhes do evento</h2>
+                <div class="cards">
+                    <article class="card">
+                        <h3>Cerimônia</h3>
+                        <p>22 de Novembro de 2025 • 16:30</p>
+                        <p>Igreja São Bento</p>
+                        <p>Av. Governador Pedro Pedrossiam, 989 - Centro Norte, Várzea Grande - MT</p>
+                    </article>
+                    <article class="card">
+                        <h3>Recepção</h3>
+                        <p>A partir de 18:00</p>
+                        <p>Espaço Jardim Real</p>
+                        <p>Av. Primavera, 987 – Jardim</p>
+                    </article>
+                    <article class="card">
+                        <h3>Traje</h3>
+                        <p>Social completo</p>
+                        <p class="muted">Sinta-se elegante e confortável</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Nossa história -->
+        <section id="historia" class="section story" aria-labelledby="story-title">
+            <div class="container split">
+                <div>
+                    <h2 id="story-title">Nossa história</h2>
+                    <p>Começou com um café despretensioso e virou nosso sonho compartilhado. Entre viagens, risadas e planos, descobrimos que a vida é mais bonita quando dividida.</p>
+                    <p>Agora queremos celebrar este amor com você. Sua presença fará nosso dia ainda mais especial.</p>
+                </div>
+                <figure class="story-photo">
+                    <img src="https://images.unsplash.com/photo-1522673607200-164d1b6ce486?q=80&w=1600&auto=format&fit=crop" alt="Casal se abraçando ao pôr do sol" />
+                </figure>
+            </div>
+        </section>
+
+        <!-- Local -->
+        <section id="local" class="section location" aria-labelledby="location-title">
+            <div class="container">
+                <h2 id="location-title">Local</h2>
+                <div class="map-card">
+                    <iframe title="Mapa do local" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                        src="https://www.google.com/maps?q=Av.%20Governador%20Pedro%20Pedrossiam%2C%20989%20-%20Centro%20Norte%2C%20V%C3%A1rzea%20Grande%20-%20MT%2C%2078110-354&output=embed"></iframe>
+                    <div class="map-info">
+                        <p>Av. Governador Pedro Pedrossiam, 989 - Centro Norte, Várzea Grande - MT, 78110-354</p>
+                        <a class="btn small" target="_blank" rel="noopener" href="https://maps.google.com/?q=Av.%20Governador%20Pedro%20Pedrossiam%2C%20989%20-%20Centro%20Norte%2C%20V%C3%A1rzea%20Grande%20-%20MT%2C%2078110-354">Abrir no Maps</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Galeria -->
+        <section id="galeria" class="section gallery" aria-labelledby="gallery-title">
+            <div class="container">
+                <h2 id="gallery-title">Momentos</h2>
+                <div class="grid">
+                    <img src="https://images.unsplash.com/photo-1537633552985-df8429e8048b?q=80&w=1200&auto=format&fit=crop" alt="Detalhe de mãos dadas">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=1200&auto=format&fit=crop" alt="Alianças">
+                    <img src="https://images.unsplash.com/photo-1464983953574-0892a716854b?q=80&w=1200&auto=format&fit=crop" alt="Flores brancas">
+                    <img src="https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?q=80&w=1200&auto=format&fit=crop" alt="Brinde com taças">
+                </div>
+            </div>
+        </section>
+
+        <!-- Presentes -->
+        <section id="presentes" class="section presentes-section" aria-labelledby="presentes-title">
+            <div class="container">
+                <h2 id="presentes-title">Presentes</h2>
+                <p class="muted">Escolha um ou mais presentes divertidos. O total aparece abaixo.</p>
+                <div class="presente-grid">
+                    <label class="presente-card presente-checkbox">
+                      <input type="checkbox" name="presente" value="Pix da Lua de Mel (R$0)" data-valor="0">
+                      <span class="presente-img">💸</span>
+                      <span class="presente-titulo">Pix da Lua de Mel</span>
+                      <span class="presente-valor">R$ 0</span>
+                    </label>
+                    <label class="presente-card presente-checkbox">
+                      <input type="checkbox" name="presente" value="Levar coxinha gourmet (R$35)" data-valor="35">
+                      <span class="presente-img">🍗</span>
+                      <span class="presente-titulo">Levar coxinha gourmet</span>
+                      <span class="presente-valor">R$ 35</span>
+                    </label>
+                    <label class="presente-card presente-checkbox">
+                      <input type="checkbox" name="presente" value="Dançar com os noivos (Coragem)" data-valor="0">
+                      <span class="presente-img">🕺</span>
+                      <span class="presente-titulo">Dançar com os noivos</span>
+                      <span class="presente-valor">Coragem</span>
+                    </label>
+                    <label class="presente-card presente-checkbox">
+                      <input type="checkbox" name="presente" value="Pagar a pizza do pós-festa (R$40)" data-valor="40">
+                      <span class="presente-img">🍕</span>
+                      <span class="presente-titulo">Pagar a pizza do pós-festa</span>
+                      <span class="presente-valor">R$ 40</span>
+                    </label>
+                    <label class="presente-card presente-checkbox">
+                      <input type="checkbox" name="presente" value="Caixa de bombom (R$20)" data-valor="20">
+                      <span class="presente-img">🍫</span>
+                      <span class="presente-titulo">Caixa de bombom</span>
+                      <span class="presente-valor">R$ 20</span>
+                    </label>
+                    <label class="presente-card presente-checkbox">
+                      <input type="checkbox" name="presente" value="Contribuir com cerveja (R$50)" data-valor="50">
+                      <span class="presente-img">🍻</span>
+                      <span class="presente-titulo">Contribuir com cerveja</span>
+                      <span class="presente-valor">R$ 50</span>
+                    </label>
+                </div>
+                <div id="presente-total-inline" class="presente-total-bar" style="margin-top:16px;">Valor total: R$ 0</div>
+                <div class="pix-area" id="pix-area-inline" style="margin-top:12px;">
+                  <p><b>Pagamento via Pix (opcional):</b></p>
+                  <p class="muted">A chave abaixo e o QR são gerados com o valor total selecionado.</p>
+                  <div class="rsvp-form" style="grid-template-columns: 1fr 1fr; gap:10px;">
+                    <div class="field">
+                      <label for="pix-chave-inline">Chave Pix</label>
+                      <input id="pix-chave-inline" type="text" value="seu.pix@e-mail.com" readonly>
+                    </div>
+                    <div class="field">
+                      <label>&nbsp;</label>
+                      <button type="button" id="btn-copiar-pix-inline" class="btn small">Copiar chave</button>
+                    </div>
+                  </div>
+                  <div class="field full-row">
+                    <label for="pix-brcode-inline">Pix Copia e Cola</label>
+                    <textarea id="pix-brcode-inline" rows="3" readonly wrap="off" placeholder="Gerado automaticamente"></textarea>
+                  </div>
+                  <button type="button" id="btn-copiar-brcode-inline" class="btn small">Copiar código Pix</button>
+                  <img id="pix-qr-inline" src="" alt="QR Pix" class="qr-pix" style="margin-top:6px;" />
+                </div>
+            </div>
+        </section>
+
+        <!-- RSVP -->
+        <section id="rsvp" class="section rsvp" aria-labelledby="rsvp-title">
+            <div class="container">
+                <h2 id="rsvp-title">Confirmação</h2>
+                <form class="rsvp-form" novalidate>
+                    <div class="field">
+                        <label for="nome">Nome completo</label>
+                        <input id="nome" name="nome" type="text" placeholder="Seu nome" required />
+                        <small class="error" aria-live="polite"></small>
+                    </div>
+                    <div class="field">
+                        <label for="email">E-mail</label>
+                        <input id="email" name="email" type="email" placeholder="voce@email.com" required />
+                        <small class="error" aria-live="polite"></small>
+                    </div>
+                    <div class="field">
+                        <label for="acompanha">Vai com acompanhante?</label>
+                        <select id="acompanha" name="acompanha">
+                            <option value="nao">Não</option>
+                            <option value="sim">Sim</option>
+                        </select>
+                    </div>
+                    <div class="field" id="convidado-field" style="display:none;">
+                        <label for="convidado_nome">Nome do convidado</label>
+                        <input id="convidado_nome" name="convidado_nome" type="text" placeholder="Nome do convidado" />
+                        <small class="error" aria-live="polite"></small>
+                    </div>
+                    <div class="field full-row">
+                        <label for="mensagem">Deseja Enviar uma Mensagem para o Casal?</label>
+                        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Deixe um recado carinhoso"></textarea>
+                    </div>
+                    <button class="btn primary" type="submit">Enviar confirmação</button>
+                    <p class="form-feedback" role="status" aria-live="polite"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>Com amor, Ingridy &amp; Winicius • 2026</p>
+        <p>Desenvolvido por Winicius Rosa</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
