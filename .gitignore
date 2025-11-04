@@ -1,0 +1,49 @@
+# Binários compilados
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+main
+
+# Arquivos de teste
+*.test
+*.out
+
+# Dependências
+vendor/
+
+# Arquivos de ambiente (credenciais)
+.env
+*.env
+start-with-email.bat
+
+# Arquivos CSV com dados de RSVP (contém informações sensíveis)
+rsvp_*.csv
+
+# Logs
+*.log
+
+# Cache do Go
+go.sum
+
+# Arquivos temporários
+*.tmp
+*.bak
+*.swp
+*~
+
+# IDEs
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Backup local
+BKP/
+

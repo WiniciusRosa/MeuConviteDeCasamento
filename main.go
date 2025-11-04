@@ -98,7 +98,23 @@ func main() {
 	}
 }
 
+// Helper para CORS
+func enableCORS(w http.ResponseWriter) {
+	w.Header().Set("Access-Control-Allow-Origin", "*")
+	w.Header().Set("Access-Control-Allow-Methods", "GET, POST, OPTIONS")
+	w.Header().Set("Access-Control-Allow-Headers", "Content-Type")
+}
+
 func handleRSVP(w http.ResponseWriter, r *http.Request) {
+	// Habilitar CORS
+	enableCORS(w)
+	
+	// Lidar com preflight OPTIONS
+	if r.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
+	
 	log.Println("━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━")
 	log.Printf("[RSVP] Nova requisição recebida - Método: %s, IP: %s", r.Method, getIP(r))
 	log.Println("[RSVP] ✅ Versão: 2025-11-03 10:45 (UseNumber + conversão manual)")
@@ -508,6 +524,14 @@ Vai com acompanhante: %s
 }
 
 func handleQR(w http.ResponseWriter, r *http.Request) {
+	// Habilitar CORS
+	enableCORS(w)
+	
+	// Lidar com preflight OPTIONS
+	if r.Method == http.MethodOptions {
+		w.WriteHeader(http.StatusOK)
+		return
+	}
 	log.Println("[QR] Requisição de QR code recebida")
 	
 	data := r.URL.Query().Get("data")
