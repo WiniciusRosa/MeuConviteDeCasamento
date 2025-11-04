@@ -89,9 +89,19 @@ func main() {
 	// Static files (frontend)
 	fs := http.FileServer(http.Dir("."))
 	http.Handle("/", fs)
-	addr := ":8080"
+	
+	// Porta: usar PORT do ambiente (Render/Vercel) ou 8080 como padrão
+	port := os.Getenv("PORT")
+	if port == "" {
+		port = "8080"
+	}
+	addr := ":" + port
 	log.Printf("✅ Servidor iniciado em %s\n", addr)
-	log.Printf("🌐 Abra: http://localhost%s/\n", addr)
+	if port == "8080" {
+		log.Printf("🌐 Abra: http://localhost%s/\n", addr)
+	} else {
+		log.Printf("🌐 Servidor rodando na porta %s\n", port)
+	}
 	log.Println("")
 	if err := http.ListenAndServe(addr, nil); err != nil {
 		log.Fatal(err)
