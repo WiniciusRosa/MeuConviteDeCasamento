@@ -20,12 +20,13 @@ start-with-email.bat
 
 # Arquivos CSV com dados de RSVP (contém informações sensíveis)
 rsvp_*.csv
+data/rsvps.csv
 
 # Logs
 *.log
 
 # Cache do Go
-go.sum
+# go.sum (deve ser commitado para garantir versões corretas)
 
 # Arquivos temporários
 *.tmp
@@ -46,4 +47,8 @@ desktop.ini
 
 # Backup local
 BKP/
+
+# Arquivos Python (projeto usa Go)
+server.py
+server.py.txt
 

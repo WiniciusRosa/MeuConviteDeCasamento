@@ -1649,3 +1649,91 @@ document.addEventListener('click', (e)=>{
 	}
 });
 
+// Lightbox para galeria
+(function initLightbox() {
+	const lightbox = document.getElementById('lightbox');
+	const lightboxImage = document.getElementById('lightbox-image');
+	const lightboxClose = document.querySelector('.lightbox-close');
+	const lightboxPrev = document.querySelector('.lightbox-prev');
+	const lightboxNext = document.querySelector('.lightbox-next');
+	const galleryImages = document.querySelectorAll('.gallery-image');
+	
+	if (!lightbox || !lightboxImage || !galleryImages.length) {
+		return;
+	}
+	
+	let currentImageIndex = 0;
+	const images = Array.from(galleryImages);
+	
+	function openLightbox(index) {
+		currentImageIndex = index;
+		lightboxImage.src = images[index].src;
+		lightbox.style.display = 'flex';
+		setTimeout(() => {
+			lightbox.classList.add('show');
+		}, 10);
+		document.body.style.overflow = 'hidden';
+	}
+	
+	function closeLightbox() {
+		lightbox.classList.remove('show');
+		setTimeout(() => {
+			lightbox.style.display = 'none';
+			document.body.style.overflow = '';
+		}, 300);
+	}
+	
+	function showNext() {
+		currentImageIndex = (currentImageIndex + 1) % images.length;
+		lightboxImage.src = images[currentImageIndex].src;
+	}
+	
+	function showPrev() {
+		currentImageIndex = (currentImageIndex - 1 + images.length) % images.length;
+		lightboxImage.src = images[currentImageIndex].src;
+	}
+	
+	// Adicionar event listeners às imagens
+	galleryImages.forEach((img, index) => {
+		img.addEventListener('click', () => openLightbox(index));
+	});
+	
+	// Fechar lightbox
+	if (lightboxClose) {
+		lightboxClose.addEventListener('click', closeLightbox);
+	}
+	
+	// Navegação
+	if (lightboxNext) {
+		lightboxNext.addEventListener('click', (e) => {
+			e.stopPropagation();
+			showNext();
+		});
+	}
+	
+	if (lightboxPrev) {
+		lightboxPrev.addEventListener('click', (e) => {
+			e.stopPropagation();
+			showPrev();
+		});
+	}
+	
+	// Fechar ao clicar no fundo
+	lightbox.addEventListener('click', (e) => {
+		if (e.target === lightbox) {
+			closeLightbox();
+		}
+	});
+	
+	// Fechar com tecla ESC
+	document.addEventListener('keydown', (e) => {
+		if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+			closeLightbox();
+		} else if (e.key === 'ArrowRight' && lightbox.classList.contains('show')) {
+			showNext();
+		} else if (e.key === 'ArrowLeft' && lightbox.classList.contains('show')) {
+			showPrev();
+		}
+	});
+})();
+

@@ -123,6 +123,120 @@ body {
 .gallery .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; }
 .gallery img { width: 100%; height: 240px; object-fit: cover; border-radius: 14px; border: 1px solid rgba(255,255,255,0.06); filter: saturate(.95); transition: transform .2s ease, box-shadow .2s; box-shadow: 0 8px 22px rgba(0,0,0,0.22); }
 .gallery img:hover { transform: scale(1.02); box-shadow: 0 14px 36px rgba(0,0,0,0.28); }
+.gallery-image { cursor: pointer; }
+
+/* Lightbox */
+.lightbox {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0, 0, 0, 0.95);
+	z-index: 1000;
+	display: none;
+	align-items: center;
+	justify-content: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+}
+
+.lightbox.show {
+	display: flex;
+	opacity: 1;
+}
+
+#lightbox-image {
+	max-width: 90%;
+	max-height: 90%;
+	object-fit: contain;
+	border-radius: 8px;
+	box-shadow: 0 20px 60px rgba(0, 0, 0, 0.8);
+}
+
+.lightbox-close {
+	position: absolute;
+	top: 20px;
+	right: 30px;
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #fff;
+	font-size: 40px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s ease, transform 0.2s ease;
+	z-index: 1001;
+	line-height: 1;
+	padding: 0;
+}
+
+.lightbox-close:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: scale(1.1);
+}
+
+.lightbox-prev,
+.lightbox-next {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	background: rgba(255, 255, 255, 0.1);
+	border: 1px solid rgba(255, 255, 255, 0.2);
+	color: #fff;
+	font-size: 40px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: background 0.2s ease, transform 0.2s ease;
+	z-index: 1001;
+	padding: 0;
+	line-height: 1;
+}
+
+.lightbox-prev {
+	left: 30px;
+}
+
+.lightbox-next {
+	right: 30px;
+}
+
+.lightbox-prev:hover,
+.lightbox-next:hover {
+	background: rgba(255, 255, 255, 0.2);
+	transform: translateY(-50%) scale(1.1);
+}
+
+@media (max-width: 768px) {
+	.lightbox-close {
+		top: 10px;
+		right: 15px;
+		width: 40px;
+		height: 40px;
+		font-size: 30px;
+	}
+	.lightbox-prev,
+	.lightbox-next {
+		width: 40px;
+		height: 40px;
+		font-size: 30px;
+	}
+	.lightbox-prev {
+		left: 15px;
+	}
+	.lightbox-next {
+		right: 15px;
+	}
+}
 .rsvp-form { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 8px; }
 .rsvp-form .field { display: flex; flex-direction: column; gap: 8px; }
 /* Remover dependências de nth-child e usar classe utilitária */
